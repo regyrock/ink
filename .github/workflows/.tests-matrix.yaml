@@ -1,0 +1,22 @@
+# https://github.com/python-poetry/poetry/blob/main/.github/workflows/.tests-matrix.yaml
+on:
+  workflow_call:
+    inputs:
+      runner:
+        required: true
+        type: string
+      python-version:
+        required: true
+        type: string
+      run-mypy:
+        required: true
+        type: boolean
+      run-pytest:
+        required: true
+        type: boolean
+      run-pytest-export:
+        required: true
+        type: boolean
+defaults:
+  run:
+    shell: bash
