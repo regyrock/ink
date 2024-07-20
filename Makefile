@@ -15,4 +15,5 @@ test:
 	poe test
 
 build:
+	poetry lock --no-update
 	docker build . -t regyrock/ink:${DOCKER_IMAGE_TAG}
