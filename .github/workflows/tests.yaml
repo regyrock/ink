@@ -3,6 +3,8 @@ name: Tests
 on:
   push:
   pull_request:
+    # TODO: get rid
+    types: [opened]
   merge_group:
 
 concurrency:
