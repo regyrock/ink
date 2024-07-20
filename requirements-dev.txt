@@ -1,0 +1,7 @@
+poetry
+ruff
+pre-commit
+pytest
+coverage
+typeguard
+safety
