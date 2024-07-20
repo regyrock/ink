@@ -2,9 +2,10 @@ name: Tests
 # https://github.com/python-poetry/poetry/blob/main/.github/workflows/tests.yaml
 on:
   push:
+    branches:
+      - 'dev'
+      - 'release/**'
   pull_request:
-    # TODO: get rid
-    types: [opened]
   merge_group:
 
 concurrency:
