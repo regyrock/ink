@@ -30,5 +30,8 @@ jobs:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           python-version: ${{ inputs.python-version }}
+      # TODO: install requirements once, and re-use the container.
       - run: |
-          make lint && make test
+          pip install -r requirements-dev.txt \
+          && make lint \
+          && make test
