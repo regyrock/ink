@@ -11,7 +11,7 @@ Incident Management Framework
 To install this package, run:
 
 ```sh
-pip install ink
+pip install .
 ```
 
 ## Using
