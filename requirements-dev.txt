@@ -6,3 +6,4 @@ pytest
 coverage
 typeguard
 safety
+commitizen
