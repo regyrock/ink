@@ -52,7 +52,7 @@ jobs:
     needs: changes
     steps:
       - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
-      - run: pip install -r requirements-dev.txt && pip install . && poetry check --lock
+      - run: poetry check --lock
 
   tests-matrix:
     # Use this matrix with multiple jobs defined in a reusable workflow:
