@@ -8,13 +8,7 @@ on:
       python-version:
         required: true
         type: string
-      run-mypy:
-        required: true
-        type: boolean
       run-pytest:
-        required: true
-        type: boolean
-      run-pytest-export:
         required: true
         type: boolean
 defaults:
@@ -28,10 +22,9 @@ jobs:
     if: inputs.run-pytest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ inputs.python-version }}
-      # TODO: install requirements once, and re-use the container.
-      - run: |
-          pip install -r requirements-dev.txt \
-          && make lint \
-          && make test
+      - run: pip install -r requirements-dev.txt
+      - run: make lint
+      - run: make test
