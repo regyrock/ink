@@ -84,7 +84,9 @@ jobs:
           #  image: windows-2022
           #- name: macOS aarch64
           #  image: macos-14
-        python-version: ["3.12", "3.13.0-beta.3"]
+        python-version:
+          - "3.12"
+          #- "3.13.0-beta.3" # - not ready yet
       fail-fast: false
   status:
     name: Status
