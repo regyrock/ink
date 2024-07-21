@@ -22,6 +22,7 @@ jobs:
     if: inputs.run-pytest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ inputs.python-version }}
       # TODO: install requirements once, and re-use the container.
