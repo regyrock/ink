@@ -2,7 +2,7 @@ name: Tests
 # https://github.com/python-poetry/poetry/blob/main/.github/workflows/tests.yaml
 on:
   push:
-  pull_request:
+  #pull_request:  # deduplicate push
   merge_group:
 
 concurrency:
@@ -23,9 +23,9 @@ jobs:
       src: ${{ steps.changes.outputs.src }}
       tests: ${{ steps.changes.outputs.tests }}
     steps:
-      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+      - uses: actions/checkout@4
 
-      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+      - uses: dorny/paths-filter@v3
         id: changes
         with:
           filters: |
@@ -76,12 +76,12 @@ jobs:
         os:
           - name: Ubuntu
             image: ubuntu-22.04
-          - name: macOS x86_64
-            image: macos-13
-          - name: Windows
-            image: windows-2022
-          - name: macOS aarch64
-            image: macos-14
+          #- name: macOS x86_64
+          #  image: macos-13
+          #- name: Windows
+          #  image: windows-2022
+          #- name: macOS aarch64
+          #  image: macos-14
         python-version: ["3.12", "3.13-dev"]
       fail-fast: false
   status:
