@@ -8,13 +8,7 @@ on:
       python-version:
         required: true
         type: string
-      run-mypy:
-        required: true
-        type: boolean
       run-pytest:
-        required: true
-        type: boolean
-      run-pytest-export:
         required: true
         type: boolean
 defaults:

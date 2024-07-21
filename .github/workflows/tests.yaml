@@ -69,9 +69,7 @@ jobs:
     with:
       runner: ${{ matrix.os.image }}
       python-version: ${{ matrix.python-version }}
-      run-mypy: ${{ needs.changes.outputs.tests == 'true' }}
       run-pytest: ${{ needs.changes.outputs.tests == 'true' }}
-      run-pytest-export: ${{ needs.changes.outputs.src == 'true' }}
     secrets: inherit
     strategy:
       matrix:
@@ -84,7 +82,7 @@ jobs:
             image: windows-2022
           - name: macOS aarch64
             image: macos-14
-        python-version: ["3.12"]
+        python-version: ["3.12", "3.13-dev"]
       fail-fast: false
   status:
     name: Status
