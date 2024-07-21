@@ -1,8 +1,9 @@
 name: Tests
 # https://github.com/python-poetry/poetry/blob/main/.github/workflows/tests.yaml
 on:
+  # https://github.com/orgs/community/discussions/26940#discussioncomment-3254060
   push:
-  #pull_request:  # deduplicate push
+  pull_request:
   merge_group:
 
 concurrency:
@@ -75,7 +76,8 @@ jobs:
       matrix:
         os:
           - name: Ubuntu
-            image: ubuntu-22.04
+            image: ubuntu-24.04
+          # No need to make CI run longer than necessary.
           #- name: macOS x86_64
           #  image: macos-13
           #- name: Windows
